@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For My Swasti ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="bg" id="bg"></div>
+    <audio id="mainSong" src="./song.mp3" loop></audio>
+
+    <div class="music-control" onclick="toggleMusic()">
+        <div class="disk" id="musicDisk"></div>
+    </div>
+
+    <div class="scene" id="scene1">
+        <div class="card">
+            <h1 style="font-family:'Playfair Display'; font-size: 2.8rem; color: var(--accent);">Wifey <span style="color:red;">❤️</span></h1>
+            <p>I've been waiting for this moment...</p>
+            <button class="unlock" id="unlockBtn">Open My Heart</button>
+        </div>
+    </div>
+
+    <div id="scene2" class="scene hidden">
+        <div class="card">
+            <div id="giftBox" style="font-size:5rem; cursor:pointer;">🎁</div>
+            <div id="greeting" class="hidden">
+                <h1 style="font-family:'Playfair Display'; color:var(--accent); font-size: 1.8rem;">Happy Birthday, Ladoo! ❤️</h1>
+                <div id="photoSlide" style="margin-top:20px;">
+                    <img id="photo" src="" style="width:100%; height:250px; border-radius:15px; border:8px solid white; object-fit:cover; box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+                    <p id="photoMsg" style="font-family:'Dancing Script'; font-size:1.5rem; margin-top:15px;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="scene3" class="scene hidden">
+        <div class="card">
+            <img src="./proposal-chibi.jpg" style="width:100%; max-width:250px; mix-blend-mode:multiply;">
+            <h2 style="font-family:'Dancing Script'; font-size:2rem; color:var(--primary);">Swasti, will you stay mine forever? 💍</h2>
+            <div style="height:70px; margin-top:20px; position:relative;">
+                <button class="btn-yes" onclick="handleYes()">YES ❤️</button>
+                <button id="no-btn" class="btn-no" onmouseover="moveButton()">NO 🙈</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="scene4" class="scene hidden">
+        <div class="card">
+            <h1 style="font-family:'Dancing Script'; font-size:2.2rem; color:var(--accent);">Close your eyes and wish... 🎂</h1>
+            <div style="margin:40px 0; font-size:5rem; position:relative;">
+                🎂<div class="candle" id="candle"><div class="flame"></div></div>
+            </div>
+            <button class="unlock" onclick="finishCelebration()">Blow Candle 💨</button>
+        </div>
+    </div>
+
+    <div id="scene5" class="scene hidden">
+        <div class="card">
+            <h1 style="font-family:'Dancing Script'; font-size:2.6rem; color:var(--primary);">To My Wifey... ❤️</h1>
+            <div id="love-letter"></div>
+        </div>
+    </div>
+
+    <div id="scene_envelope" class="scene hidden">
+        <div class="card" style="background:transparent; box-shadow:none; border:none;">
+            <div class="envelope-wrapper" onclick="openEnvelope()">
+                <div class="envelope-icon">💌</div>
+                <p style="font-family:'Dancing Script'; font-size:1.5rem; color:var(--accent);">Click to open my secret diary...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="scene6" class="scene hidden">
+        <div class="card diary-card">
+            <div class="countdown-container">
+                <p style="font-size:0.7rem; color:#888;">Days since Jan 9, 2020 (8:45 PM):</p>
+                <div id="countdown">Calculating...</div>
+            </div>
+            <div id="diary-memory"></div>
+            <div id="final-reply" class="hidden" style="margin-top:30px; border-top:1px solid #ddd; padding-top:15px; opacity:0; transition:1s;">
+                <textarea id="wifey-msg" placeholder="Tell me what's in your heart..." style="width:100%; height:70px; border:1px solid #ccc; padding:10px; border-radius:10px;"></textarea>
+                <button class="unlock" onclick="sendReply()" style="width:100%; background:#25D366; margin-bottom:10px;">Send to My WhatsApp ❤️</button>
+                <button class="unlock" onclick="transition('scene6', 'scene_final')" style="width:100%; background:var(--accent);">Click for one last thing... ✨</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="scene_final" class="scene hidden">
+        <div class="card">
+            <h1 class="final-msg">I love you meri ladoo! ❤️</h1>
+            <p style="margin-top:20px; font-size:1.2rem; color:#666;">Forever & Always.</p>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
